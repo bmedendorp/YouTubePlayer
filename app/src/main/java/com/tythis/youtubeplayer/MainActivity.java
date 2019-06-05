@@ -1,3 +1,7 @@
+/*
+ * Brian Medendorp (2019)
+ */
+
 package com.tythis.youtubeplayer;
 
 import android.support.v7.app.AppCompatActivity;
