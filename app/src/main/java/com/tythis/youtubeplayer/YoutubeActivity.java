@@ -17,9 +17,6 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
     private static final String TAG = "YoutubeActivity";
-    static String GOOGLE_API_KEY = "";
-    static final String YOUTUBE_VIDEO_ID = "t5THMr7YbEM";
-    static final String YOUTUBE_PLAYLIST = "RDt5THMr7YbEM";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +35,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         playerView.setLayoutParams(new ConstraintLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         layout.addView(playerView);
 
-        GOOGLE_API_KEY = getString(R.string.api_key);
-        playerView.initialize(GOOGLE_API_KEY, this);
+        playerView.initialize(MainActivity.GOOGLE_API_KEY, this);
     }
 
     @Override
@@ -51,7 +47,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
 
         if (!wasRestored) {
-            youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID);
+            youTubePlayer.cueVideo(MainActivity.YOUTUBE_VIDEO_ID);
         }
     }
 
